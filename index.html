@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#05030a" />
+<title>THE SECRET OF MY HEART ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ===== LOADING SCREEN ===== -->
+<div id="loading" class="loading">
+  <div class="loader-heart">
+    <svg viewBox="0 0 100 100" width="120" height="120">
+      <defs>
+        <radialGradient id="hg" cx="50%" cy="40%">
+          <stop offset="0%" stop-color="#ffb3e0"/>
+          <stop offset="55%" stop-color="#ff6bcb"/>
+          <stop offset="100%" stop-color="#a855f7"/>
+        </radialGradient>
+      </defs>
+      <path d="M50,88 C20,68 8,48 8,32 C8,18 20,8 32,8 C40,8 46,13 50,20 C54,13 60,8 68,8 C80,8 92,18 92,32 C92,48 80,68 50,88 Z" fill="url(#hg)" opacity=".95"/>
+    </svg>
+    <div class="loader-ring"></div>
+  </div>
+  <p class="loading-title">LOADING YOUR SURPRISE...</p>
+  <p class="loading-sub" id="loadingSub">Preparing magic ✨</p>
+  <div class="loading-bar"><i id="loadingBar"></i></div>
+</div>
+
+<!-- ===== MAIN APP ===== -->
+<div id="app" class="app" aria-hidden="true">
+
+  <!-- Background layers -->
+  <canvas id="skyCanvas" class="sky"></canvas>
+  <div id="heartsLayer" class="hearts-layer"></div>
+  <canvas id="fx" class="fx"></canvas>
+  <div id="burstLayer" class="burst-layer"></div>
+
+  <!-- ===== TOPBAR ===== -->
+  <header class="topbar">
+    <button id="backBtn" class="icon-btn" type="button" aria-label="Back">←</button>
+    <div class="topbar-title">THE SECRET <span class="h">❤</span> OF MY HEART</div>
+    <div class="topbar-actions">
+      <button id="musicBtn" class="icon-btn" type="button" aria-pressed="false" aria-label="Music ON/OFF">🎵</button>
+      <button id="settingsBtn" class="icon-btn" type="button" aria-label="Settings">⚙</button>
+    </div>
+  </header>
+
+  <!-- ===== SCREEN 1: WELCOME ===== -->
+  <section class="screen active" id="s1">
+    <div class="moon"></div>
+    <div class="welcome">
+      <div class="badge">✦ A Cinematic Surprise ✦</div>
+      <h1 class="title">THE SECRET OF MY <span class="heart-pulse">❤</span> HEART</h1>
+      <p class="lead">A quiet night, a bright moon, and a heart that wants to speak.</p>
+      <p class="tagline" id="tagline">I HAVE SOMETHING SPECIAL FOR YOU</p>
+      <button class="btn primary" id="btnUnlock" type="button">UNLOCK MY HEART</button>
+    </div>
+  </section>
+
+  <!-- ===== SCREEN 2: PASSWORD ===== -->
+  <section class="screen" id="s2">
+    <div class="card">
+      <div class="lock-icon">🔐</div>
+      <h2 class="h2">A Little Secret Code</h2>
+      <p class="muted">Type the secret code we agreed on. Psst… it unlocks something special.</p>
+      <div class="code-inputs" id="codeInputs">
+        <input type="text" maxlength="1" inputmode="numeric" autocomplete="off" />
+        <input type="text" maxlength="1" inputmode="numeric" autocomplete="off" />
+        <input type="text" maxlength="1" inputmode="numeric" autocomplete="off" />
+        <input type="text" maxlength="1" inputmode="numeric" autocomplete="off" />
+      </div>
+      <p class="hint" id="codeHint">Default code: <b>1234</b> — change it in ⚙ Settings.</p>
+      <button class="btn primary" id="btnUnlockCode" type="button">UNLOCK ❤️</button>
+    </div>
+  </section>
+
+  <!-- ===== SCREEN 3: CINEMATIC ===== -->
+  <section class="screen cinematic-screen" id="s3">
+    <div class="cinematic-stage">
